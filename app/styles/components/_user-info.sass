@@ -1,0 +1,23 @@
+$primary-color: #016cff
+.site-header
+  width: 100%
+  background: #242f3e
+  position: fixed
+  z-index: 1
+nav
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+    li
+      display: inline-block
+      a
+        color: #fff
+        padding: 30px 10px 27px
+        text-decoration: none
+        display: block
+        border-bottom: 3px solid $primary-color
+        &.active,
+        &:hover,
+        &:active
+          border-bottom-color: $primary-color

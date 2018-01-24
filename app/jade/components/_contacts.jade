@@ -1,0 +1,53 @@
+#contacts.container-fluid
+  .row
+    .col-md-6
+      .contact-info-wrap
+        .contact-info
+          p
+            i.fa.fa-home
+            |  address: 121 King Street, Melbourne, Australia
+          p
+            i.fa.fa-phone
+            |  phone: +123 456 789 000
+          p
+            i.fa.fa-envelope
+            |  email:
+            a(href='mailto:company@email.com', target='_blank') company@email.com
+        // Begin social buttons
+        .social-buttons.margin-top-20
+          ul
+            li
+              a.btn.btn-social-min.btn-dark-bordered.btn-rounded-full(href='#', target='_blank', title='Follow me on facebook')
+            li
+              a.btn.btn-social-min.btn-dark-bordered.btn-rounded-full(href='#', target='_blank', title='Follow me on youtube')
+    .col-md-6
+      form#contact-form
+        .contact-form-inner.text-left
+          .contact-form-info
+            h1.contact-form-title.font-alter-1 Get In Touch
+            p
+              | Sollicitudin diam vitae, amet lacus donec eu, donec vulputate duis nullam nulla, suscipit nulla orci, ornare maecenas eget gravida. Curae sollicitudin lobortis.
+          .row
+            .col-lg-6
+              .form-group
+                input.form-control(type='text', name='name', placeholder='Your Name', required='')
+            .col-lg-6
+              .form-group
+                input.form-control(type='email', name='email', placeholder='Your Email', required='')
+          .row
+            .col-lg-12
+              .form-group
+                input.form-control(type='text', name='subject', placeholder='Subject', required='')
+          .row
+            .col-lg-12
+              .form-group
+                textarea.form-control(name='message', rows='4', placeholder='Your Message', required='')
+          .small.text-gray
+            em * All fields are required!
+
+        .row
+          .col-lg-12
+            button.btn-send(type='submit') Send Message
+
+  .row
+    #map

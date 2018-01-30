@@ -1,0 +1,97 @@
+.user-albums
+  &__list
+    display: flex
+    flex-flow: row wrap
+    justify-content: space-around
+  &__item
+    width: 100%
+    max-width: 300px
+    cursor: pointer
+    background-color: #fff
+    box-shadow: 0 1px 2px rgba(25,25,25,0.2)
+    border-radius: 5px 5px 3px 3px
+    margin: 0 0 30px 0
+    position: relative
+    padding-bottom: 65px
+    &:hover
+      img
+        filter: grayscale(0)
+    .sticky
+      position: absolute
+      bottom: 0
+      left: 10px
+      width: 93%
+  &__img
+    width: 100%
+    max-width: 300px
+    overflow: hidden
+    a
+      display: block
+    img
+      width: 100%
+      height: auto
+      border-radius: 3px 3px 0 0
+      filter: grayscale(100%)
+
+  &__desc
+    padding: 10px 10px 0
+  &__date
+    color: #a4a4a4
+    font-size: 11px
+    margin: 7px 0 0
+  &__title
+    color: $text-color
+    text-decoration: none
+    font-weight: 700
+    margin-bottom: 10px
+    display: block
+  &__author
+    margin-bottom: 10px
+    font-size: 14px
+  &__stat
+    border-top: $borderGrey
+    padding: 7px 0
+    span
+      margin-right: 7px
+      position: relative
+      &.pre-eye
+        &::before
+          content: url('../images/eye.svg')
+          margin: 0 7px 0 5px
+      &.thumb
+        &::before
+          content: url('../images/thumb.svg')
+          margin: 0 7px 0 5px
+  &__tags
+    &.tags
+      text-align: left
+      margin-bottom: 5px
+      .tag
+        padding: 5px 10px
+        margin: 0 5px 10px 0
+        border-radius: 3px
+        line-height: inherit
+        height: auto
+        cursor: inherit
+        text-transform: lowercase
+        &::before,
+        &::after
+          display: none
+        &:hover,
+        &.active
+          background-color: #eee
+          color: #999
+
+.tag-filter__title
+  font-weight: 700
+  font-size: 20px
+  text-align: center
+
+@media (min-width: 576px)
+  .user-albums__item
+    width: 50%
+    margin: 0 20px 20px 0
+
+@media (min-width: 992px)
+  .user-albums__item
+    width: 33%

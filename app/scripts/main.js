@@ -1,9 +1,37 @@
 window.onload = function() {
-
-  //var map = document.getElementById('#map');
-  //if(map.length>0) {
-    initMap();
+  var i;
+  //var tablinks = document.getElementsByClassName("tablinks");
+  //
+  //if(tablinks) {
+  //  var firstTabContent = tablinks[0].getAttribute("data-content");
+  //  document.getElementById(firstTabContent).style.display = "block";
+  //  tablinks[0].className += " active";
+  //
+  //  for (i = 0; i < tablinks.length; i++) {
+  //    tablinks[i].addEventListener("click", function(e) {
+  //      var tabContent = this.getAttribute("data-content");
+  //      openContent(e,tabContent);
+  //    }, false);
+  //  }
   //}
+
+  function openContent(e,tabContent) {
+    var tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabContent).style.display = "block";
+    e.currentTarget.className += " active";
+  }
+
+  var map = document.getElementById('#map');
+  if(map) {
+    initMap();
+  }
   function initMap() {
     var lat = 49.224544,
         lng = 28.427415,
@@ -11,7 +39,6 @@ window.onload = function() {
     var map =  new google.maps.Map(document.getElementById('map'), {
       zoom: 16,
       center: currentCenter,
-      //styles: [{"featureType":"administrative","elementType":"all","stylers":[{"visibility":"on"},{"lightness":33}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2e5d4"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#c5dac6"}]},{"featureType":"poi.park","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":20}]},{"featureType":"road","elementType":"all","stylers":[{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"color":"#c5c6c6"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#e4d7c6"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#fbfaf7"}]},{"featureType":"water","elementType":"all","stylers":[{"visibility":"on"},{"color":"#acbcc9"}]}]
       styles: [
         {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
         {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
@@ -106,7 +133,11 @@ window.onload = function() {
       infowindow.open(map, marker);
     });
   }
-
+  var request = new XMLHttpRequest();
+  request.open("GET", "user_profile.json", false);
+  request.send(null);
+  var my_JSON_object = JSON.parse(request.responseText);
+  console.log(' my_JSON_object--> ',my_JSON_object.users[0].first_name );
 };
 function hasClass(element, cls) {
   return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
@@ -120,25 +151,3 @@ function toggleClass(el, _class) {
     el.className = el.className + ' ' + _class;
   }
 }
-
-
-
-var ankorLink = document.getElementsByClassName('ankor');
-
-for (var i = 0; i < ankorLink.length; i++) {
-  if(hasClass(ankorLink[i], 'active')){
-    toggleClass(ankorLink[i], 'active');
-  }
-  ankorLink[i].onclick = function() {
-    this.classList.add("active");
-    var idItem = this.getAttribute('href').substr(1);
-    console.log('idItem  --> ',idItem  );
-    //goToByScroll(idItem);
-    return false;
-  };
-}
-//function goToByScroll (id) {
-//  console.log('id --> ', id);
-//  var idElement = document.getElementById(id);
-//  //scrollTo(idElement, 0, 1250);
-//}

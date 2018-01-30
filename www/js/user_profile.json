@@ -1,0 +1,118 @@
+{
+  "users": [
+    {
+      "user_id": "1",
+      "first_name": "Sammy",
+      "last_name": "Shark",
+      "albums": [
+        {
+          "title": "work",
+          "photos": [
+            {
+              "photo1": [
+                {
+                  "URL": "images/gallery-single-7.jpg"
+                }
+              ],
+              "photo2": [
+                {
+                  "URL": "images/gallery-single-7.jpg"
+                }
+              ]
+            }
+          ],
+          "tags": "love, happy"
+        },
+        {
+          "title": "tutorials",
+          "photos": [
+            {
+              "photo1": [
+                {
+                  "URL": "images/gallery-single-7.jpg"
+                }
+              ],
+              "photo2": [
+                {
+                  "URL": "images/gallery-single-7.jpg"
+                }
+              ]
+            }
+          ],
+          "tags": "love, happy"
+        }
+      ],
+      "social_media": [
+        {
+          "description": "twitter",
+          "link": "https://twitter.com/digitalocean"
+        },
+        {
+          "description": "facebook",
+          "link": "https://www.facebook.com/DigitalOceanCloudHosting"
+        },
+        {
+          "description": "github",
+          "link": "https://github.com/digitalocean"
+        }
+      ]
+    },
+    {
+      "user_id": "2",
+      "first_name": "Sammy2",
+      "last_name": "Shark2",
+      "albums": [
+        {
+          "title": "work",
+          "photos": [
+            {
+              "photo1": [
+                {
+                  "URL": "images/gallery-single-7.jpg"
+                }
+              ],
+              "photo2": [
+                {
+                  "URL": "images/gallery-single-7.jpg"
+                }
+              ]
+            }
+          ],
+          "tags": "love, happy"
+        },
+        {
+          "title": "tutorials",
+          "photos": [
+            {
+              "photo1": [
+                {
+                  "URL": "images/gallery-single-7.jpg"
+                }
+              ],
+              "photo2": [
+                {
+                  "URL": "images/gallery-single-7.jpg"
+                }
+              ]
+            }
+          ],
+          "tags": "love, happy"
+        }
+      ],
+      "social_media": [
+        {
+          "description": "twitter",
+          "link": "https://twitter.com/digitalocean"
+        },
+        {
+          "description": "facebook",
+          "link": "https://www.facebook.com/DigitalOceanCloudHosting"
+        },
+        {
+          "description": "github",
+          "link": "https://github.com/digitalocean"
+        }
+      ]
+    }
+  ]
+}

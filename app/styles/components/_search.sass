@@ -1,0 +1,45 @@
+.search-bar
+  background-color: #fff
+  height: 160px
+  text-align: center
+
+.search-bar__clear
+  display: inline-block
+  font-size: 40px
+  line-height: 50px
+  margin: 55px 0
+  background: none
+  border: none
+  color: #ccc
+  margin-left: 10px
+  vertical-align: bottom
+  &:hover
+    color: #191919
+    cursor: pointer
+  &.hide
+    display: none
+
+.search-bar__form
+  display: inline-block
+
+.search-bar__input
+  display: inline-block
+  font-size: 40px
+  line-height: 50px
+  margin: 55px 0
+  border: none
+  overflow: hidden
+  text-align: center
+  vertical-align: middle
+  white-space: nowrap
+  &:focus
+    outline: 0
+  &:-ms-input-placeholder,
+  &::placeholder
+    color: #ccc
+    text-align: center
+
+@media (max-width: 603px)
+  .search-bar__input
+    font-size: 30px
+

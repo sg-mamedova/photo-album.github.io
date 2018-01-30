@@ -28,6 +28,7 @@ var path = {
     scripts: 'app/scripts/**/*.js',
     images: 'app/images/**/*.*',
     fonts: 'app/fonts/**/*.*',
+    json: 'app/json/**/*.*',
     templates: 'app/jade/**/*.jade'
   }
 };
@@ -41,7 +42,8 @@ gulp.task('default', [
   'styles',
   'fonts',
   'images',
-  'templates'
+  'templates',
+  'json'
 ]);
 
 //gulp.task('watch', ['browserSync'], function() {
@@ -51,6 +53,7 @@ gulp.task('watch', function() {
   gulp.watch(path.app.images, ['images']);
   gulp.watch(path.app.templates, ['templates']);
   gulp.watch(path.app.fonts, ['fonts']);
+  gulp.watch(path.app.json, ['json']);
 
 });
 
@@ -93,6 +96,18 @@ gulp.task('fonts', function(done) {
     .pipe(gulp.dest(path.public.fonts))
     .on('error', function(err){
       throw new gutil.PluginError('fonts', err);
+    })
+    .on('end', done);
+});
+
+/**
+ * build json
+ */
+gulp.task('json', function(done) {
+  gulp.src(path.app.json)
+    .pipe(gulp.dest(path.public.scripts))
+    .on('error', function(err){
+      throw new gutil.PluginError('json', err);
     })
     .on('end', done);
 });
